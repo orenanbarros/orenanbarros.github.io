@@ -9,14 +9,14 @@ import {FiLinkedin } from 'react-icons/fi'
 type Props = {}
 
 function SocialMedias({}: Props) {
-  let style = `p-2.5 hover:text-cyan-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer`
+  let style = 'iconSocialMedia'
   return (
-    <div className='flex justify-center mb-8 md:flex-col md:fixed md:bottom-0 md:left-3 md:mb-0'>
-      <div className={style}><AiFillGithub size={25}/></div>
-      <div className={style}><FaInstagram size={25}/></div>
-      <div className={style}><BsTwitter size={25}/></div>
-      <div className={style}><FiLinkedin size={25}/></div>
-      <div className='hidden md:block p-0 pb-0 after:bg-cyan-700 after:block after:w-px after:h-24 after:mx-auto'></div>
+    <div className='socialMedias'>
+      <a href="https://github.com/orenanbarros" target='_blank' className={style}><AiFillGithub size={25}/></a>
+      <a href="https://www.instagram.com/orenanbarros/" target='_blank' className={style}><FaInstagram size={25}/></a>
+      <a href="https://twitter.com/orenanbarros" target='_blank' className={style}><BsTwitter size={25}/></a>
+      <a href="https://www.linkedin.com/in/renan-barros-31a80678/" target='_blank' className={style}><FiLinkedin size={25}/></a>
+      <a className='hidden md:block p-0 pb-0 after:bg-cyan-700 after:block after:w-px after:h-24 after:mx-auto'></a>
     </div>
   )
 }

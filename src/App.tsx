@@ -3,7 +3,7 @@ import './App.css'
 import {useState} from 'react'
 import Navbar from './components/Navbar';
 import SocialMedias from './components/SocialMedias';
-import ImgRenan from './assets/renanbarros.png'
+import ImgRenan from './assets/rbarros2023.png'
 
 import { SiTailwindcss,SiJavascript, SiExpress, SiMongodb, SiPostgresql, SiTypescript, SiDocker, SiPostman} from 'react-icons/si'
 import { RiVuejsFill } from 'react-icons/ri'
@@ -12,6 +12,12 @@ import { DiNodejs, DiNpm, DiCss3 } from 'react-icons/di'
 import { BsGit } from 'react-icons/bs'
 import { AiFillGithub, AiFillHtml5, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'
 
+import tailwindcss from './assets/icontecs/tailwindcss.svg'
+import vuejs from './assets/icontecs/vuejs.svg'
+import git from './assets/icontecs/git.png'
+
+import Icon from './components/icon';
+import Footer from './components/Footer';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -57,7 +63,7 @@ function App() {
     {
       visible:false,
       id:4,
-      company:'CRCRJ',
+      company:'CRC-RJ',
       companyFullName:'CRCRJ - Conselho Regional de Contabilidade do Estado do Rio de Janeiro.',
       rageWorkingTime:'2005-2006',
       role: 'Estagiário da Assessoria de Informática.',
@@ -80,8 +86,8 @@ function App() {
   – Prêmios/reconhecimentos
   */
  
-  let style = 'techBlock'
-  //= `flex flex-row hover:text-cyan-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer`
+  let style = 'techIcon'
+
   let techIconSize = 70;
 
   const handleOnClickCompany = (e)=>{
@@ -92,48 +98,50 @@ function App() {
     <div className={`${darkMode ? "dark" : ""}`}>
       <div className='dark:bg-black dark:text-white'>
         <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
-        <div className='pt-8 flex flex-col items-center justify-center'>
-          <div id='top' className='mb-10 p-5'>
+        <div className='pt-28 flex flex-col items-center justify-center'>
+          <section id='top'>
             <h4>Olá, meu nome é</h4>
-            <h1 className='text-5xl py-2 text-slate-700 md:text-[7rem]'>RENAN BARROS.</h1>
-            <div className='flex'>
-              teste
-            </div>
-          </div>
+            <h1 className='text-5xl py-2 text-slate-700 md:text-[6rem]'>RENAN BARROS</h1>          
+          </section>
           <section id='about'>
             <h1 className='py-10'>Sobre mim</h1>
-            <div className='text-justify'>
-                <p className='mb-2'>
-                  Olá!! Meu nome é Renan e eu me amarro em criar sistemas para internet. 
-                  Meu interesse em desenvolvimento web começou há mais ou menos uns 6 anos
-                  quando eu comecei a trabalhar com o CMS Wordprees, editando temas e gerando soluções.
-                </p>
-                <p className='mb-2'>Desta forma aprendi muito sobre HTML e CSS.</p>
-                <p>
-                  Mais recentemente, tive o privilégio de trabalhar em projetos para uma ONG
-                  onde aprendi muito sobre Vue.js e tive contatos com React e Angular.
-                  Meu foco principal atualmente é criar produtos acessiveis e inclusivos e gerar
-                  experiencias digitais para uma variedade de clientes.
-                </p>
-                <br></br>
-                <p>Aqui estão algumas tecnologias com que eu tenho trabalhado recentemente:</p>
-                <ul className='ml-8 mt-6'>
-                    <li>JavaScript (ES6+)</li>
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                </ul>
+            <div className='md:flex'>
+              <div className='md:basis-1/2 text-justify'>
+                  <p className='mb-2'>
+                    Olá, meu nome é Renan e eu tenho paixão por desenvolvimentos de sistemas para internet. 
+                    Meu interesse por essa área iniciou há mais ou menos uns 6 anos quando eu comecei a trabalhar com o CMS Wordprees, editando temas e gerando soluções.
+                  </p>
+                  <p className='mb-2'>Desta forma aprendi muito sobre HTML e CSS.</p>
+                  <p>
+                    Mais recentemente, tive o privilégio de trabalhar em projetos para uma ONG
+                    onde aprendi muito sobre Vue.js e tive contatos com React e Angular.
+                    Meu foco principal atualmente é criar produtos acessíveis e inclusivos e gerar
+                    experiencias digitais para uma variedade de clientes.
+                  </p>
+                  <br></br>
+                  <p>Aqui estão algumas tecnologias com que eu tenho trabalhado atualmente:</p>
+                  <ul className='ml-8 mt-6 list-disc ulCustom'>
+                      <li>JavaScript (ES6+)</li>
+                      <li>TypeScript</li>
+                      <li>React</li>
+                      <li>Node.js</li>
+                  </ul>
+              </div>
+              <div className='imgAboutWrapper'>
+                <img src={ImgRenan} className='sepia hover:filter-none'/>
+              </div>
             </div>
           </section>
-          <section id='experience' className='mb-10 p-5 text-justify justify-center items-center md:max-w-3xl'>
-            <h1 className='py-10'>Onde trabalhei</h1>
+          <section id='experience' 
+            className='mb-10 p-5 text-justify justify-center items-center md:max-w-3xl'>
+            <h1 className='py-10 text-center'>Onde trabalhei</h1>
 
-            <div className='flex'>
-              <div className='flex flex-col mr-10'>
-                <ul className='flex flex-col w-48'>
+            <div className='md:flex'>
+              <div className='md:flex md:flex-col md:mr-10 md:mb-0 mb-4'>
+                <ul className='flex md:flex-col md:w-48 justify-center gap-2 md:gap-0'>
                   {professionalExperience.map((item) =>(                 
                     <li 
-                      className={`company ${item.id == currentIdCompany ? 'currentCompanyActive' : ''}`} 
+                      className={`company md:mdCompany ${item.id == currentIdCompany ? 'md:mdCurrentCompanyActive' : ''}`} 
                       value={item.id} 
                       key={item.id} 
                       onClick={handleOnClickCompany}>
@@ -144,7 +152,7 @@ function App() {
               </div>
               <div>
                 {professionalExperience.map((item) =>(
-                  <div key={item.id + item.company} className={`flex flex-col ${item.id == currentIdCompany ? 'visible' : 'hidden'}`}>
+                  <div key={item.id + item.company} className={`flex flex-col ${item.id == currentIdCompany ? 'visible' : 'hidden'} min-h-full`}>
                     <span className='text-lg text-slate-900 font-semibold'>{item.companyFullName}</span>
                     <span className='mb-4'>
                       <span className='text-sm mr-2'>{item.role}</span>
@@ -152,7 +160,7 @@ function App() {
                     </span>
                     <ul>
                     {item.desc.map((desc,index)=>(
-                      <li key={index} className='mb-2'>{desc}</li>
+                      <li key={index} className='mb-2 text-justify'>{desc}</li>
                     ))}
                     </ul>
                     
@@ -161,22 +169,23 @@ function App() {
               </div>
 
             </div>
-
           </section>
           <section id='techs' className='flex flex-col text-center p-5'>
             <h1 className='py-10'>Tecnologias</h1>
             <div className=''>
               <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5'>
                 <p className='py-4 mb-4'>
-                  Algumas tecnoligas que eu uso pra criar aplicações client-side.
+                  Algumas tecnologias que eu uso pra criar aplicações Client-side.
                 </p>
                 <div className='flex flex-wrap gap-4 justify-center'>
                   <span><AiFillHtml5 className={style} size={techIconSize}/></span>
                   <span><DiCss3 className={style} size={techIconSize}/></span>
                   <span><FaSass className={style} size={techIconSize}/></span>
-                  <span><SiTailwindcss className={style} size={techIconSize}/></span>
+                  <span><Icon src={tailwindcss} alt='tailwindCss' title='tailwindcss' className={style}/></span>
+                  <span><Icon src={vuejs} alt='vuejs' title='vuejs' className={style}/></span>
+                  
                   <span><SiJavascript className={style} size={techIconSize}/></span>
-                  <span><RiVuejsFill className={style} size={techIconSize}/></span>
+               
                   <span><FaReact className={style} size={techIconSize}/></span>
                 </div>
               </div>
@@ -198,7 +207,7 @@ function App() {
                 </p>
                 <div className='flex flex-wrap gap-4 justify-center'>
                   <span><DiNpm className={style} size={techIconSize}/></span>
-                  <span><BsGit className={style} size={techIconSize}/></span>
+                  <span><Icon src={git} alt='git' title='git' className={style}/></span>
                   <span><AiFillGithub className={style} size={techIconSize}/></span>
 
                   <span><SiDocker className={style} size={techIconSize}/></span>
@@ -210,7 +219,7 @@ function App() {
             </div>
           </section>
           <section id='contato' className='flex flex-col text-center p-5 w-full'>
-            <h1 className='py-10'>Contatos</h1>
+            <h1 className='py-10'>Entre em contato</h1>
             <div className='p-10 shadow-md bg-white mb-5 flex gap-4 justify-center'>
                 <AiOutlineMail size={40} className='hover:text-slate-400 cursor-pointer'/>
                 <AiOutlineWhatsApp className='hover:text-green-600 cursor-pointer' size={40}/>
@@ -218,7 +227,8 @@ function App() {
           </section>
         </div>
 
-        <SocialMedias/>
+                              
+        <Footer/>
       </div>
     </div>
     
