@@ -1,69 +1,220 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+@layer base {
+    section { @apply md:max-w-3xl w-full px-5 mb-10}  
+    .navClass{
+        @apply  
+            py-3 
+            flex 
+            justify-between 
+            bg-slate-300
+            items-center
+            dark:bg-slate-900
+            fixed 
+            top-0 
+            left-0 
+            right-0
+            z-10
+            scroll-pt-64
+            border-b-[1px]
+            border-b-slate-400
+            opacity-80
+            
+    }
+    .techIcon{
+      @apply 
+      flex 
+      flex-row 
+      hover:text-yellow-400
+      transition ease-in-out 
+      delay-150 
+      hover:-translate-y-1 
+      hover:scale-110 
+      duration-300 
+      cursor-pointer
+      h-16
+      w-16
+      saturate-0 
+      hover:filter-none
+    }
+    .ulCustom li{list-style-type: square;}
+
+    .company { @apply 
+      p-2 
+      cursor-pointer
+      bg-slate-300 
+      hover:bg-slate-500
+      transition ease-in-out 
+      delay-150
+    hover:text-white
+  
+      
+    
+    }
+    .mdCompany { @apply 
+      p-2 
+      cursor-pointer
+      bg-transparent
+      hover:bg-slate-300 
+      transition ease-in-out 
+      delay-150
+    hover:text-white
+      border-solid 
+      border-s-2
+    border-slate-400
+    }
+    .currentCompanyActive { 
+      @apply 
+      border-solid 
+      border-s-2 
+      border-slate-700 
+      pl-2 
+      bg-slate-400 
+      text-white
+    }
+    .mdCurrentCompanyActive { 
+      @apply 
+      border-solid 
+      border-s-2 
+      border-slate-700 
+      pl-2 
+      bg-slate-400 
+      text-white
+    }
+    
+    .socialMedias{
+      @apply
+      flex 
+      justify-center 
+      py-8 
+      text-white  
+      md:flex-col 
+      md:fixed 
+      md:bottom-0 
+      md:left-3 
+      md:py-0 
+      md:bg-transparent 
+      md:text-inherit
+    }
+    .iconSocialMedia{
+      @apply
+      p-2.5
+      hover:text-yellow-500
+      md:hover:text-yellow-500
+      transition ease-in-out 
+      delay-150 
+      hover:-translate-y-1 
+      hover:scale-110 
+      duration-300 
+      cursor-pointer
+    }
+    .emailContact{
+      writing-mode:vertical-lr;
+      @apply
+      hidden
+      md:flex
+      justify-center 
+      text-white  
+      md:fixed 
+      md:bottom-0 
+      md:right-3 
+      md:text-inherit
+      items-center
+
+    after:bg-cyan-700 
+      after:block  
+      after:w-px 
+      after:h-24 after:mx-auto
+    }
+    .emailContact a{
+      @apply
+      md:m-2
+    }
+
+    .imgAboutWrapper{
+      @apply
+      mx-auto 
+      w-72 
+      h-72 
+      mt-20 
+      md:mt-0
+      relative
+
+      before:w-72
+      before:h-[17rem]
+      before:border-gray-400
+      before:border-2
+      before:-z-10
+      before:top-3
+      before:left-4
+      before:block
+      before:absolute
+      before:transition-all
+      before:ease-in-out 
+
+      hover:before:left-5
+      hover:before:top-4
+      hover:before:border-yellow-400
+ 
+      
+    }
+    .gotoTopButton{
+      @apply
+      fixed
+      bg-slate-600
+      text-white
+      right-10
+      bottom-10
+      w-8
+      h-8
+      flex
+      items-center
+      justify-center
+
+    }
+
+    .link{
+      @apply 
+        hover:text-yellow-400
+        cursor-pointer
+    }
+
+    .btnCurriculum{
+      @apply
+        mt-6  
+        
+    }
+
+    .btnCurriculum a {
+      @apply
+        text-white
+        hover:text-black
+        p-2
+        bg-slate-400
+        hover:bg-yellow-400
+        hover:-translate-y-5  
+         
+        cursor-pointer
+        transition-all
+        ease-in-out 
+        delay-150 
+    }
+
+    .boxContacts{
+      @apply
+      shadow-md 
+      p-5 
+      md:w-96 
+      transition ease-in-out 
+      delay-150 
+      hover:-translate-y-1 
+      hover:scale-110 
+      duration-300 
+    }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+@tailwind components;
+@tailwind utilities
