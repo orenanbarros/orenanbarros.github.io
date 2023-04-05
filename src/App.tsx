@@ -86,8 +86,8 @@ function App() {
 
   let techIconSize = 70;
 
-  const handleOnClickCompany = (e)=>{
-    setCurrentIdCompany(e.target.value)
+  const handleOnClickCompany = (e:React.MouseEvent<HTMLLIElement>)=>{
+    setCurrentIdCompany(e.currentTarget.value)
   }
 
   return (
