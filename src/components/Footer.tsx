@@ -6,12 +6,12 @@ type Props = {}
 
 function Footer({}: Props) {
   return (
-    <div className='bg-slate-500 text-center p-4'>
+    <div className='text-center p-4'>
       <SocialMedias/>
-      <div className='text-white text-sm'>
+      <div className='text-slate-500 text-sm'>
         Desenhado e construído por Renan Barros - 2023
       </div>
-      <EmailContact/>
+      <EmailContact mailto='renanalmeidadebarros@gmail.com'/>
     </div>
   )
 }

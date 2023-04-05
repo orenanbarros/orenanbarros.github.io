@@ -1,10 +1,16 @@
 import './App.css'
 
 import {useState} from 'react'
-import Navbar from './components/Navbar';
-import SocialMedias from './components/SocialMedias';
-import ImgRenan from './assets/rbarros2023.png'
 
+//*images
+import ImgRenan from './assets/rbarros2023.png'
+import plataformaAtos from './assets/projects/plataforma-atos.png'
+import plataformaEva from './assets/projects/plataforma-eva.png'
+
+//*Docs
+import curriculum from './assets/Curriculo_Renan_Barros_2023.pdf'
+
+//Icons
 import { SiTailwindcss,SiJavascript, SiExpress, SiMongodb, SiPostgresql, SiTypescript, SiDocker, SiPostman} from 'react-icons/si'
 import { RiVuejsFill } from 'react-icons/ri'
 import { FaReact, FaAws, FaAngular, FaSass} from 'react-icons/fa'
@@ -12,12 +18,11 @@ import { DiNodejs, DiNpm, DiCss3 } from 'react-icons/di'
 import { BsGit } from 'react-icons/bs'
 import { AiFillGithub, AiFillHtml5, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'
 
-import tailwindcss from './assets/icontecs/tailwindcss.svg'
-import vuejs from './assets/icontecs/vuejs.svg'
-import git from './assets/icontecs/git.png'
-
-import Icon from './components/icon';
+//Components
+import Navbar from './components/Navbar';
+import Icon from './components/IconTech';
 import Footer from './components/Footer';
+import GoToTopButton from './components/GoToTopButton';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -99,13 +104,15 @@ function App() {
       <div className='dark:bg-black dark:text-white'>
         <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
         <div className='pt-28 flex flex-col items-center justify-center'>
+
           <section id='top'>
             <h4>Olá, meu nome é</h4>
             <h1 className='text-5xl py-2 text-slate-700 md:text-[6rem]'>RENAN BARROS</h1>          
           </section>
+
           <section id='about'>
             <h1 className='py-10'>Sobre mim</h1>
-            <div className='md:flex'>
+            <div className='md:flex md:gap-8'>
               <div className='md:basis-1/2 text-justify'>
                   <p className='mb-2'>
                     Olá, meu nome é Renan e eu tenho paixão por desenvolvimentos de sistemas para internet. 
@@ -124,14 +131,21 @@ function App() {
                       <li>JavaScript (ES6+)</li>
                       <li>TypeScript</li>
                       <li>React</li>
+                      <li>Vue.js</li>
                       <li>Node.js</li>
                   </ul>
               </div>
-              <div className='imgAboutWrapper'>
-                <img src={ImgRenan} className='sepia hover:filter-none'/>
+              <div className='flex flex-col items-center'>
+                <div className='imgAboutWrapper'>
+                  <img src={ImgRenan} className='sepia hover:filter-none'/>
+                </div>
+                <div className='btnCurriculum'>
+                  <a href={curriculum} target='_blank'>Baixar Currículo</a>
+                </div>
               </div>
             </div>
           </section>
+
           <section id='experience' 
             className='mb-10 p-5 text-justify justify-center items-center md:max-w-3xl'>
             <h1 className='py-10 text-center'>Onde trabalhei</h1>
@@ -170,65 +184,94 @@ function App() {
 
             </div>
           </section>
-          <section id='techs' className='flex flex-col text-center p-5'>
+
+          <section id='techs' className='flex flex-col text-center p-5 mb-0'>
             <h1 className='py-10'>Tecnologias</h1>
             <div className=''>
               <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5'>
                 <p className='py-4 mb-4'>
-                  Algumas tecnologias que eu uso pra criar aplicações Client-side.
+                  Algumas tecnologias que utilizo pra criar aplicações Client-side.
                 </p>
-                <div className='flex flex-wrap gap-4 justify-center'>
-                  <span><AiFillHtml5 className={style} size={techIconSize}/></span>
-                  <span><DiCss3 className={style} size={techIconSize}/></span>
-                  <span><FaSass className={style} size={techIconSize}/></span>
-                  <span><Icon src={tailwindcss} alt='tailwindCss' title='tailwindcss' className={style}/></span>
-                  <span><Icon src={vuejs} alt='vuejs' title='vuejs' className={style}/></span>
-                  
-                  <span><SiJavascript className={style} size={techIconSize}/></span>
-               
-                  <span><FaReact className={style} size={techIconSize}/></span>
+                <div className='flex flex-wrap gap-6 justify-center'>
+                  <Icon icon={<AiFillHtml5 className={style}/>} title='HTML5'/>
+                  <Icon icon={<DiCss3 className={style}/>} title='Css3'/>
+                  <Icon icon={<FaSass className={style}/>} title='Sass'/>
+                  <Icon icon={<SiTailwindcss className={style}/>} title='Tailwindcss'/>
+                  <Icon icon={<RiVuejsFill className={style}/>} title='Vue.js' />
+                  <Icon icon={<SiJavascript className={style}/>} title='JavaScript'/>
+                  <Icon icon={<FaReact className={style}/>} title='React'/>
                 </div>
               </div>
               <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5'>
                 <p className='py-4 mb-4'>
                   Algumas tecnologias que utilizo para criar aplicações backend rápidas e escaláveis.
                 </p>
-                <div className='flex flex-wrap gap-4 justify-center'>
-                  <span><DiNodejs className={style} size={techIconSize}/></span>
-                  <span><SiExpress className={style} size={techIconSize}/></span>
-                  <span><SiMongodb className={style} size={techIconSize}/></span>
-                  <span><SiPostgresql className={style} size={techIconSize}/></span>
-                  <span><SiTypescript className={style} size={techIconSize}/></span>
+                <div className='flex flex-wrap gap-6 justify-center'>
+                  <Icon icon={<SiTypescript className={style}/>} title='TypeScript'/>
+                  <Icon icon={<DiNodejs className={style}/>} title='Node.js'/>
+                  <Icon icon={<SiExpress className={style}/>} title='Express'/>
+                  <Icon icon={<SiMongodb className={style}/>} title='Mongo DB'/>
+                  <Icon icon={<SiPostgresql className={style}/>} title='PostgreSQL'/>
                 </div>
               </div>
               <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5'>
                 <p className='py-4 mb-4'>
                   dentre outras ferramentas e tecnologias ...
                 </p>
-                <div className='flex flex-wrap gap-4 justify-center'>
-                  <span><DiNpm className={style} size={techIconSize}/></span>
-                  <span><Icon src={git} alt='git' title='git' className={style}/></span>
-                  <span><AiFillGithub className={style} size={techIconSize}/></span>
-
-                  <span><SiDocker className={style} size={techIconSize}/></span>
-                  <span><FaAws className={style} size={techIconSize}/></span>
-                  <span><SiPostman className={style} size={techIconSize}/></span>
-                  <span><FaAngular className={style} size={techIconSize}/></span>  
+                <div className='flex flex-wrap gap-6 justify-center'>
+                  <Icon icon={<AiFillGithub className={style}/>} title='GitHub'/>
+                  <Icon icon={<DiNpm className={style}/>} title='NPM'/>
+                  <Icon icon={<BsGit className={style}/>} title='Git'/>
+                  <Icon icon={<SiDocker className={style}/>} title='Docker'/>
+                  <Icon icon={<FaAws className={style}/>} title='AWS'/>
+                  <Icon icon={<SiPostman className={style}/>} title='PostMan'/>
+                  <Icon icon={<FaAngular className={style}/>} title='Angular'/>                 
+  
                 </div>
               </div>
             </div>
           </section>
+
+          <section id='projects' className='p-5 mb-0 text-center'>
+            <h1 className='py-10'>Alguns projetos que construí</h1>
+            <div className='flex text-center'>
+              <div>
+                <a href="https://atos.igarape.org.br/" target='_blank'> 
+                  <img src={plataformaAtos}/>
+                </a>
+                <div className='flex flex-col'>
+                  <span className='text-yellow-500 text-lg font-semibold'>EVA</span>
+                  Plataforma sobre Evidências de Violências e Alternativas para mulheres e meninas.
+                </div>
+              </div>
+              <div>
+                <a href="https://eva.igarape.org.br/" target='_blank'> 
+                  <img src={plataformaEva}/>
+                </a>
+                <div className='flex flex-col'>
+                  <span className='text-yellow-500 text-lg font-semibold'>ATOS</span>
+                  Plataforma de monitoramento e acompanhamento dos decretos do Poder Executivo Federal pela sociedade.
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section id='contato' className='flex flex-col text-center p-5 w-full'>
-            <h1 className='py-10'>Entre em contato</h1>
+            <h1 className=''>Entre em contato</h1>
             <div className='p-10 shadow-md bg-white mb-5 flex gap-4 justify-center'>
-                <AiOutlineMail size={40} className='hover:text-slate-400 cursor-pointer'/>
+              <a className="link" href='mailto:renanalmeidadebarros@gmail.com'>
+                <AiOutlineMail size={40} />
+              </a>
+              <a href="https://web.whatsapp.com/send?phone=+5521997640679">
                 <AiOutlineWhatsApp className='hover:text-green-600 cursor-pointer' size={40}/>
+              </a>
             </div>
           </section>
         </div>
 
                               
         <Footer/>
+        <GoToTopButton/>
       </div>
     </div>
     

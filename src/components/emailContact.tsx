@@ -1,9 +1,12 @@
 
-function EmailContact() {
+type Prop ={
+  mailto:string
+}
+function EmailContact({mailto}:Prop) {
   
   return (
     <div className='emailContact'>
-      <span>renanalmeidadebarros@gmail.com</span>
+      <a className="link" href={`mailto:${mailto}`}>{mailto}</a>
     </div>
   )
 }
