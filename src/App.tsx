@@ -80,16 +80,7 @@ function App() {
   ]
   
   const [currentIdCompany, setCurrentIdCompany] = useState(1)
- /*
-  Itens portifolio:
-  – Informações de contato, incluindo as redes sociais que você mais usa
-  – Uma breve biografia e uma foto sua
-  – Experiência relevante e habilidades dentro do contexto do portfólio
-  – Projetos pessoais
-  – Documentação de código fonte
-  – Formação acadêmica
-  – Prêmios/reconhecimentos
-  */
+ 
  
   let style = 'techIcon'
 
@@ -103,6 +94,7 @@ function App() {
     <div className={`${darkMode ? "dark" : ""}`}>
       <div className='dark:bg-black dark:text-white'>
         <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
+        
         <div className='pt-28 flex flex-col items-center justify-center'>
 
           <section id='top'>
@@ -188,7 +180,7 @@ function App() {
           <section id='techs' className='flex flex-col text-center p-5 mb-0'>
             <h1 className='py-10'>Tecnologias</h1>
             <div className=''>
-              <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5'>
+              <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5 dark:bg-slate-800'>
                 <p className='py-4 mb-4'>
                   Algumas tecnologias que utilizo pra criar aplicações Client-side.
                 </p>
@@ -202,7 +194,7 @@ function App() {
                   <Icon icon={<FaReact className={style}/>} title='React'/>
                 </div>
               </div>
-              <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5'>
+              <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5 dark:bg-slate-800'>
                 <p className='py-4 mb-4'>
                   Algumas tecnologias que utilizo para criar aplicações backend rápidas e escaláveis.
                 </p>
@@ -214,7 +206,7 @@ function App() {
                   <Icon icon={<SiPostgresql className={style}/>} title='PostgreSQL'/>
                 </div>
               </div>
-              <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5'>
+              <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5 dark:bg-slate-800'>
                 <p className='py-4 mb-4'>
                   dentre outras ferramentas e tecnologias ...
                 </p>
@@ -234,7 +226,7 @@ function App() {
 
           <section id='projects' className='p-5 mb-10 text-center '>
             <h1 className='py-10'>Alguns projetos que construí</h1>
-            <div className='flex text-center'>
+            <div className='flex text-center '>
               <div>
                 <a href="https://eva.igarape.org.br/" target='_blank'> 
                   <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaAtos}/>
@@ -264,7 +256,7 @@ function App() {
           <section id='contato' className='flex flex-col text-center p-5 justify-center items-center'>
             <h1 className='mb-10'>Entre em contato</h1>
             <div className='flex flex-col md:flex-row gap-10'>
-              <div className='boxContacts'>
+              <div className='boxContacts dark:bg-slate-800'>
                 <a className="link flex flex-col items-center text-center " href='mailto:renanalmeidadebarros@gmail.com'>
                   <span>E-mail</span>
                   <AiOutlineMail size={40} />
@@ -272,12 +264,12 @@ function App() {
                 </a>
               </div>
 
-              <div className='boxContacts'>
+              <div className='boxContacts dark:bg-slate-800'>
                 <a 
                   className="link flex flex-col items-center text-center " 
                   href="https://web.whatsapp.com/send?phone=+5521997640679"
                 >
-                  <span>E-mail</span>
+                  <span>WhatsApp</span>
                   <AiOutlineWhatsApp className='hover:text-green-600 cursor-pointer' size={40}/>
                   +552199764-0679
                 </a>
