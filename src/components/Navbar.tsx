@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
+import logo from '../assets/logo.png'
 
 import { HashLink as Link } from 'react-router-hash-link';
 
@@ -15,11 +16,13 @@ function Navbar({darkMode, setDarkMode}:Props) {
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
   }
 
-  let classLink = 'p-2 hover:-translate-y-0.5 hover:text-yellow-500'
-  let classDarkMode = 'mr-2 md:mx-4 cursor-pointer hover:text-slate-600 hover:-translate-y-0.5 hover:text-yellow-500'
+  let classLink = 'p-2 hover:-translate-y-0.5 hover:text-yellow-600'
+  let classDarkMode = 'mr-2 ml-2 md:mx-4 cursor-pointer hover:text-slate-600 hover:-translate-y-0.5 hover:text-yellow-500'
   return (
     <nav className="navClass">
-      <Link className='p-2' scroll={el => scrollWithOffset(el,-100)} to="#top">RB</Link>
+      <Link className='p-2' scroll={el => scrollWithOffset(el,-100)} to="#top">
+        <img src={logo} width={50}/>
+      </Link>
       <h1 className='text-xl ml-3' ></h1>
       <div className='flex items-center'>
         <Link className={classLink} scroll={el => scrollWithOffset(el,-30)} to='#about'>Sobre</Link>
@@ -27,7 +30,7 @@ function Navbar({darkMode, setDarkMode}:Props) {
         <Link className={classLink} scroll={el => scrollWithOffset(el,-30)} to='#techs'>Tecnologias</Link>
         <Link className={classLink} scroll={el => scrollWithOffset(el,-30)} to='#projects'>Projetos</Link>
         
-        <Link className={classLink} to='#contato' scroll={el => scrollWithOffset(el,-30)}>Contato</Link>
+        <Link className={classLink} to='#contato' scroll={el => scrollWithOffset(el,-45)}>Contato</Link>
         <div onClick={() => setDarkMode!(!darkMode)} className={classDarkMode}>
           {darkMode 
             ?(<BsFillSunFill/>):(<BsFillMoonStarsFill/>)  

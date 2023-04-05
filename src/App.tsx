@@ -232,40 +232,60 @@ function App() {
             </div>
           </section>
 
-          <section id='projects' className='p-5 mb-0 text-center'>
+          <section id='projects' className='p-5 mb-10 text-center '>
             <h1 className='py-10'>Alguns projetos que construí</h1>
             <div className='flex text-center'>
               <div>
-                <a href="https://atos.igarape.org.br/" target='_blank'> 
-                  <img src={plataformaAtos}/>
-                </a>
-                <div className='flex flex-col'>
-                  <span className='text-yellow-500 text-lg font-semibold'>EVA</span>
-                  Plataforma sobre Evidências de Violências e Alternativas para mulheres e meninas.
-                </div>
-              </div>
-              <div>
                 <a href="https://eva.igarape.org.br/" target='_blank'> 
-                  <img src={plataformaEva}/>
+                  <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaAtos}/>
                 </a>
-                <div className='flex flex-col'>
+                
+                <a href="https://eva.igarape.org.br/" target='_blank' className='flex flex-col'> 
+                  <span className='text-yellow-500 text-lg font-semibold '>EVA</span>
+                  Plataforma sobre Evidências de Violências e Alternativas para mulheres e meninas.
+                </a>
+                
+              </div>
+
+              <div>
+                <a href="https://atos.igarape.org.br/" target='_blank'> 
+                  <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaEva}/>
+                </a>
+                
+                <a href="https://atos.igarape.org.br/" target='_blank' className='flex flex-col'> 
                   <span className='text-yellow-500 text-lg font-semibold'>ATOS</span>
                   Plataforma de monitoramento e acompanhamento dos decretos do Poder Executivo Federal pela sociedade.
-                </div>
+                </a>
+                
               </div>
             </div>
           </section>
 
-          <section id='contato' className='flex flex-col text-center p-5 w-full'>
-            <h1 className=''>Entre em contato</h1>
-            <div className='p-10 shadow-md bg-white mb-5 flex gap-4 justify-center'>
-              <a className="link" href='mailto:renanalmeidadebarros@gmail.com'>
-                <AiOutlineMail size={40} />
-              </a>
-              <a href="https://web.whatsapp.com/send?phone=+5521997640679">
-                <AiOutlineWhatsApp className='hover:text-green-600 cursor-pointer' size={40}/>
-              </a>
+          <section id='contato' className='flex flex-col text-center p-5 justify-center items-center'>
+            <h1 className='mb-10'>Entre em contato</h1>
+            <div className='flex flex-col md:flex-row gap-10'>
+              <div className='boxContacts'>
+                <a className="link flex flex-col items-center text-center " href='mailto:renanalmeidadebarros@gmail.com'>
+                  <span>E-mail</span>
+                  <AiOutlineMail size={40} />
+                  renanalmeidadebarros@gmail.com
+                </a>
+              </div>
+
+              <div className='boxContacts'>
+                <a 
+                  className="link flex flex-col items-center text-center " 
+                  href="https://web.whatsapp.com/send?phone=+5521997640679"
+                >
+                  <span>E-mail</span>
+                  <AiOutlineWhatsApp className='hover:text-green-600 cursor-pointer' size={40}/>
+                  +552199764-0679
+                </a>
+              </div>
             </div>
+
+          
+            
           </section>
         </div>
 
