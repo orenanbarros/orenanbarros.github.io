@@ -80,7 +80,7 @@ function App() {
   ]
   
   const [currentIdCompany, setCurrentIdCompany] = useState(1)
- 
+  const [isNavOpen, setIsNavOpen] = useState(false);
  
   let style = 'techIcon'
 
@@ -93,7 +93,7 @@ function App() {
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
       <div className='dark:bg-black dark:text-white'>
-        <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
+        <Navbar setDarkMode={setDarkMode} darkMode={darkMode} setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen}/>
         
         <div className='pt-28 flex flex-col items-center justify-center'>
 
@@ -144,7 +144,7 @@ function App() {
 
             <div className='md:flex'>
               <div className='md:flex md:flex-col md:mr-10 md:mb-0 mb-4'>
-                <ul className='flex md:flex-col md:w-48 justify-center gap-2 md:gap-0'>
+                <ul className='flex md:flex-col md:w-48 justify-center gap-1  md:gap-0'>
                   {professionalExperience.map((item) =>(                 
                     <li 
                       className={`company md:mdCompany ${item.id == currentIdCompany ? 'md:mdCurrentCompanyActive' : ''}`} 
@@ -173,11 +173,11 @@ function App() {
                   </div>
                 ))}
               </div>
-
             </div>
           </section>
 
-          <section id='techs' className='flex flex-col text-center p-5 mb-0'>
+          <section id='techs' 
+          className='flex flex-col text-center p-5 mb-0'>
             <h1 className='py-10'>Tecnologias</h1>
             <div className=''>
               <div className='bg-slate-100 pl-12 pr-12 pt-8 pb-12 mb-5 dark:bg-slate-800'>
@@ -224,36 +224,35 @@ function App() {
             </div>
           </section>
 
-          <section id='projects' className='p-5 mb-10 text-center '>
+          <section id='projects' 
+          className='p-5 mb-10 text-center '>
             <h1 className='py-10'>Alguns projetos que construí</h1>
             <div className='flex text-center '>
               <div>
-                <a href="https://eva.igarape.org.br/" target='_blank'> 
-                  <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaAtos}/>
-                </a>
-                
-                <a href="https://eva.igarape.org.br/" target='_blank' className='flex flex-col'> 
-                  <span className='text-yellow-500 text-lg font-semibold '>EVA</span>
-                  Plataforma sobre Evidências de Violências e Alternativas para mulheres e meninas.
-                </a>
-                
-              </div>
-
-              <div>
                 <a href="https://atos.igarape.org.br/" target='_blank'> 
-                  <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaEva}/>
+                  <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaAtos}/>
                 </a>
                 
                 <a href="https://atos.igarape.org.br/" target='_blank' className='flex flex-col'> 
                   <span className='text-yellow-500 text-lg font-semibold'>ATOS</span>
                   Plataforma de monitoramento e acompanhamento dos decretos do Poder Executivo Federal pela sociedade.
                 </a>
+              </div>
+              <div>
+                <a href="https://eva.igarape.org.br/" target='_blank'> 
+                  <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaEva}/>
+                </a>
                 
+                <a href="https://eva.igarape.org.br/" target='_blank' className='flex flex-col'> 
+                  <span className='text-yellow-500 text-lg font-semibold '>EVA</span>
+                  Plataforma sobre Evidências de Violências e Alternativas para mulheres e meninas.
+                </a>
               </div>
             </div>
           </section>
 
-          <section id='contato' className='flex flex-col text-center p-5 justify-center items-center'>
+          <section id='contato' 
+          className='flex flex-col text-center p-5 justify-center items-center'>
             <h1 className='mb-10'>Entre em contato</h1>
             <div className='flex flex-col md:flex-row gap-10'>
               <div className='boxContacts dark:bg-slate-800'>
