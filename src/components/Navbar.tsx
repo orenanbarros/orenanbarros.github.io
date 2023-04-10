@@ -32,24 +32,25 @@ function Navbar({darkMode, setDarkMode, setIsNavOpen, isNavOpen}:Props) {
         <img src={logo} width={50}/>
       </Link>      
 
-      <div id="mobile-menu" className="">
-        <GiHamburgerMenu className='md:hidden' size={35} onClick={() => setIsNavOpen!((prev) => !prev)}/>
-       
-        <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-          <div className="absolute top-0 right-0 px-2 py-2 cursor-pointer"  onClick={() => setIsNavOpen!((prev) => !prev)} >
-            <AiFillCloseSquare size={40}/>
-          </div>
-          <div id="menu-mobile-open" className="flex flex-col">
-            <Link className='linkBtn' scroll={el => scrollWithOffset(el,-40)} to='#about'>Sobre</Link>
-            <Link className='linkBtn' scroll={el => scrollWithOffset(el,-20)} to='#experience'>Experiência</Link>
-            <Link className='linkBtn' scroll={el => scrollWithOffset(el,-20)} to='#techs'>Tecnologias</Link>
-            <Link className='linkBtn' scroll={el => scrollWithOffset(el,-20)} to='#projects'>Projetos</Link>
-            <Link className='linkBtn' to='#contato' scroll={el => scrollWithOffset(el,-55)}>Contato</Link>
-            <div onClick={() => setDarkMode!(!darkMode)} className='darkModeBtn'>
-              {darkMode 
-                ?(<BsFillSunFill/>):(<BsFillMoonStarsFill/>)  
-              }
-            </div>
+      <div className='lg:hidden'>
+        <GiHamburgerMenu className={isNavOpen ? "hidden": ""} size={35} onClick={() => setIsNavOpen!((prev) => !prev)}/>
+        
+          
+        <div id="mobile-menu" className={`menuNav ${isNavOpen ? "showMenuNav": ""}`}>
+          <span className='self-end flex items-center gap-2 text-xs'>
+            Fechar
+            <AiFillCloseSquare size={40} className={`self-end ${!isNavOpen ? "hidden": ""}`}  onClick={() => setIsNavOpen!((prev) => !prev)} /> 
+          </span>
+          
+          <Link className='linkBtn' scroll={el => scrollWithOffset(el,-40)} to='#about'>Sobre</Link>
+          <Link className='linkBtn' scroll={el => scrollWithOffset(el,-20)} to='#experience'>Experiência</Link>
+          <Link className='linkBtn' scroll={el => scrollWithOffset(el,-20)} to='#techs'>Tecnologias</Link>
+          <Link className='linkBtn' scroll={el => scrollWithOffset(el,-20)} to='#projects'>Projetos</Link>
+          <Link className='linkBtn' to='#contato' scroll={el => scrollWithOffset(el,-55)}>Contato</Link>
+          <div onClick={() => setDarkMode!(!darkMode)} className=' linkBtn darkModeBtn'>
+            {darkMode 
+              ?(<BsFillSunFill/>):(<BsFillMoonStarsFill/>)  
+            }
           </div>
         </div>
       </div>
