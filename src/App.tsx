@@ -6,6 +6,7 @@ import {useState} from 'react'
 import ImgRenan from './assets/rbarros2023.png'
 import plataformaAtos from './assets/projects/plataforma-atos.png'
 import plataformaEva from './assets/projects/plataforma-eva.png'
+import plataformaGenerali from './assets/projects/plataforma-generali.png'
 
 //*Docs
 import curriculum from './assets/Curriculo_Renan_Barros_2023.pdf'
@@ -158,7 +159,7 @@ function App() {
               </div>
               <div>
                 {professionalExperience.map((item) =>(
-                  <div key={item.id + item.company} className={`flex flex-col ${item.id == currentIdCompany ? 'visible' : 'hidden'} min-h-full`}>
+                  <div key={item.id + item.company} className={`flex flex-col ${item.id == currentIdCompany ? 'visible' : 'hidden'} h-1/2`}>
                     <span className='text-lg text-slate-900 font-semibold'>{item.companyFullName}</span>
                     <span className='mb-4'>
                       <span className='text-sm mr-2'>{item.role}</span>
@@ -227,8 +228,8 @@ function App() {
           <section id='projects' 
           className='p-5 mb-10 text-center '>
             <h1 className='py-10'>Alguns projetos que construí</h1>
-            <div className='flex text-center '>
-              <div>
+            <div className='flex flex-col md:flex-row text-center gap-5'>
+              <div className='boxProjects'>
                 <a href="https://atos.igarape.org.br/" target='_blank'> 
                   <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaAtos}/>
                 </a>
@@ -236,9 +237,10 @@ function App() {
                 <a href="https://atos.igarape.org.br/" target='_blank' className='flex flex-col'> 
                   <span className='text-yellow-500 text-lg font-semibold'>ATOS</span>
                   Plataforma de monitoramento e acompanhamento dos decretos do Poder Executivo Federal pela sociedade.
+                  <span className='text-xs mt-2'>Cliente: Instituto Igarapé</span>
                 </a>
               </div>
-              <div>
+              <div className='boxProjects'>
                 <a href="https://eva.igarape.org.br/" target='_blank'> 
                   <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaEva}/>
                 </a>
@@ -246,6 +248,18 @@ function App() {
                 <a href="https://eva.igarape.org.br/" target='_blank' className='flex flex-col'> 
                   <span className='text-yellow-500 text-lg font-semibold '>EVA</span>
                   Plataforma sobre Evidências de Violências e Alternativas para mulheres e meninas.
+                  <span className='text-xs mt-2'>Cliente: Instituto Igarapé</span>
+                </a>
+              </div>
+              <div className='boxProjects'>
+                <a href="https://www.generali.com.br/" target='_blank'> 
+                  <img className='hover:-translate-y-5 transition-all ease-in-out delay-200 grayscale hover:filter-none' src={plataformaGenerali}/>
+                </a>
+                
+                <a href="https://www.generali.com.br/" target='_blank' className='flex flex-col'> 
+                  <span className='text-yellow-500 text-lg font-semibold '>GENERALI</span>
+                  Site institucional da Seguradora Generali.
+                  <span className='text-xs mt-2'>Cliente: Generali Seguros</span>
                 </a>
               </div>
             </div>
