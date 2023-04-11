@@ -4,22 +4,22 @@
 @layer base {
     section { @apply md:max-w-3xl w-full px-5 mb-10}  
     .navClass{
-        @apply  
-            flex 
-            bg-slate-300
-            items-center
-            justify-between
-            px-2
-            dark:bg-slate-900
-            fixed 
-            top-0 
-            left-0 
-            right-0
-            z-10
-            border-b-[1px]
-            border-b-slate-400
-            h-14
-            
+      @apply  
+          flex 
+          bg-[#e5e8edde]
+          items-center
+          justify-between
+          px-2
+          dark:bg-[#354053de]
+          fixed 
+          top-0 
+          left-0 
+          right-0
+          z-10
+          border-b-[1px]
+          border-b-[#dfdfe0de]
+          dark:border-b-slate-800
+          h-14
     }
 
     .menuNav{
@@ -30,8 +30,6 @@
       origin-right
       absolute
     }
-
-  
 
     .showMenuNav{
       @apply
@@ -81,12 +79,13 @@
       
       
     }
+
     .linkBtn{
       @apply
       py-4
       px-4
       hover:-translate-y-0.5 
-      hover:text-white
+      hover:text-yellow-600
       md:p-2
      
     }
@@ -120,6 +119,7 @@
       text-center
       text-sm
     }
+
     .mdCompany { @apply 
       p-2 
       cursor-pointer
@@ -132,6 +132,7 @@
       border-s-2
     border-slate-400
     }
+
     .currentCompanyActive { 
       @apply 
       border-solid 
@@ -141,6 +142,7 @@
       bg-slate-400 
       text-white
     }
+
     .mdCurrentCompanyActive { 
       @apply 
       border-solid 
@@ -167,6 +169,7 @@
       dark:bg-slate-900
       dark:text-white
     }
+
     .iconSocialMedia{
       @apply
       p-2.5
@@ -179,6 +182,7 @@
       duration-300 
       cursor-pointer
     }
+
     .emailContact{
       writing-mode:vertical-lr;
       @apply
