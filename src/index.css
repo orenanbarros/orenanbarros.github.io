@@ -55,6 +55,32 @@
       hover:text-yellow-500
     }
 
+    .highligth{
+      @apply
+      flex 
+      self-end
+      bg-yellow-500
+      w-fit
+      p-2
+      absolute
+      right-9
+      md:right-0
+      
+      top-20
+      md:top-[110px]
+      opacity-75
+      font-bold
+      text-xs
+      
+      
+      text-black
+      hover:-translate-y-0.5 
+      cursor-pointer
+      hover:opacity-100
+      
+      
+      
+    }
     .linkBtn{
       @apply
       py-4
@@ -130,7 +156,7 @@
       flex 
       justify-center 
       py-8 
-      text-white  
+      text-slate-500  
       md:flex-col 
       md:fixed 
       md:bottom-0 
@@ -138,6 +164,8 @@
       md:py-0 
       md:bg-transparent 
       md:text-inherit
+      dark:bg-slate-900
+      dark:text-white
     }
     .iconSocialMedia{
       @apply
@@ -206,14 +234,15 @@
       fixed
       bg-slate-600
       text-white
-      right-10
+      right-3
       bottom-10
-      w-8
-      h-8
+      w-10
+      h-10
       flex
       items-center
       justify-center
-
+      opacity-70
+      hover:opacity-100
     }
 
     .link{
@@ -254,19 +283,97 @@
       duration-300 
     }
 
-    .boxContacts{
+    .sectionContacts{
       @apply
-      shadow-md 
+      flex 
+      flex-col
+      text-slate-700
+      bg-slate-200
       p-5 
-      md:w-96 
+      mb-0
+      gap-4
+      items-stretch
+      text-center
+      md:py-10
+    }
+    .iconsContact{
+      @apply
+      flex flex-col items-center gap-1 mb-3
+      md:flex-row
+      hover:text-yellow-700
+      hover:drop-shadow-sm
       transition ease-in-out 
       delay-150 
+      gap-2
       hover:-translate-y-1 
-      hover:scale-110 
-      duration-300 
+      hover:scale-100 
+    
+      duration-100 
+      cursor-pointer
     }
 
+    .formEmail {
+      @apply
+      bg-slate-400
+      p-10
+      rounded
+      flex
+      flex-col
+      mb-10
+      md:mb-0
+      relative
+      justify-center
+      items-center
+    }
 
+    .formEmail input, textarea{
+      @apply
+      
+      shadow 
+      appearance-none 
+      border 
+      rounded 
+      w-full 
+      py-2 
+      px-3
+      text-gray-700 
+      leading-tight 
+      mb-8 
+    }
+
+    .formEmail button{
+      @apply
+      bg-slate-700
+      px-4
+      py-2
+      rounded-sm
+      flex
+      self-center
+      text-white
+      
+    }
+
+    .modal{
+      @apply
+      bg-black
+      p-5
+      transition-all
+      absolute
+      top-0
+      left-0
+      w-full
+      h-full
+      justify-center
+      items-center
+      flex
+      
+    }
+  
+    .modal.close button{
+      @apply
+        bg-green-700
+        rounded-md
+    }
     
 }
 

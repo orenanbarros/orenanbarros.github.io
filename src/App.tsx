@@ -3,7 +3,7 @@ import './App.css'
 import {useState} from 'react'
 
 //*images
-import ImgRenan from './assets/rbarros2023.png'
+import ImgPortifolio from './assets/rbarros2023.png'
 import plataformaAtos from './assets/projects/plataforma-atos.png'
 import plataformaEva from './assets/projects/plataforma-eva.png'
 import plataformaGenerali from './assets/projects/plataforma-generali.png'
@@ -16,14 +16,20 @@ import { SiTailwindcss,SiJavascript, SiExpress, SiMongodb, SiPostgresql, SiTypes
 import { RiVuejsFill } from 'react-icons/ri'
 import { FaReact, FaAws, FaAngular, FaSass} from 'react-icons/fa'
 import { DiNodejs, DiNpm, DiCss3 } from 'react-icons/di'
-import { BsGit } from 'react-icons/bs'
+import { BsGit,BsFillTelephoneFill } from 'react-icons/bs'
 import { AiFillGithub, AiFillHtml5, AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai'
+import {GoLocation} from 'react-icons/go'
+import { BsTwitter } from 'react-icons/bs'
+import {FaInstagram } from 'react-icons/fa'
+import {FiLinkedin } from 'react-icons/fi'
+
 
 //Components
 import Navbar from './components/Navbar';
 import Icon from './components/IconTech';
 import Footer from './components/Footer';
 import GoToTopButton from './components/GoToTopButton';
+import ContactForm from './components/ContactForm'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -83,9 +89,7 @@ function App() {
   const [currentIdCompany, setCurrentIdCompany] = useState(1)
   const [isNavOpen, setIsNavOpen] = useState(false);
  
-  let style = 'techIcon'
-
-  let techIconSize = 70;
+  let style = 'techIcon';
 
   const handleOnClickCompany = (e:React.MouseEvent<HTMLLIElement>)=>{
     setCurrentIdCompany(e.currentTarget.value)
@@ -96,11 +100,12 @@ function App() {
       <div className='dark:bg-black dark:text-white'>
         <Navbar setDarkMode={setDarkMode} darkMode={darkMode} setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen}/>
         
-        <div className='pt-28 flex flex-col items-center justify-center'>
+        <div className='pt-28 flex flex-col items-center justify-center '>
 
-          <section id='top'>
+          <section id='top' className='relative'>
             <h4>Olá, meu nome é</h4>
-            <h1 className='text-5xl py-2 text-slate-700 md:text-[6rem]'>RENAN BARROS</h1>          
+            <h1 className='text-5xl py-2 text-slate-700 md:text-[6rem] relative'>RENAN BARROS</h1>          
+            <div className='highligth'>Desenvolvedor Full Stack</div>
           </section>
 
           <section id='about'>
@@ -130,7 +135,7 @@ function App() {
               </div>
               <div className='flex flex-col items-center'>
                 <div className='imgAboutWrapper'>
-                  <img src={ImgRenan} className='sepia hover:filter-none'/>
+                  <img src={ImgPortifolio} className='sepia hover:filter-none'/>
                 </div>
                 <div className='btnCurriculum'>
                   <a href={curriculum} target='_blank'>Baixar Currículo</a>
@@ -140,12 +145,12 @@ function App() {
           </section>
 
           <section id='experience' 
-            className='mb-10 p-5 text-justify justify-center items-center md:max-w-3xl'>
+            className='mb-10 p-5 text-justify justify-center items-center'>
             <h1 className='py-10 text-center'>Onde trabalhei</h1>
 
             <div className='md:flex'>
               <div className='md:flex md:flex-col md:mr-10 md:mb-0 mb-4'>
-                <ul className='flex md:flex-col md:w-48 justify-center gap-1  md:gap-0'>
+                <ul className='flex md:flex-col md:w-48 justify-center gap-1 md:gap-0'>
                   {professionalExperience.map((item) =>(                 
                     <li 
                       className={`company md:mdCompany ${item.id == currentIdCompany ? 'md:mdCurrentCompanyActive' : ''}`} 
@@ -159,7 +164,7 @@ function App() {
               </div>
               <div>
                 {professionalExperience.map((item) =>(
-                  <div key={item.id + item.company} className={`flex flex-col ${item.id == currentIdCompany ? 'visible' : 'hidden'} h-1/2`}>
+                  <div key={item.id + item.company} className={`flex flex-col ${item.id == currentIdCompany ? 'visible' : 'hidden'} `}>
                     <span className='text-lg text-slate-900 font-semibold'>{item.companyFullName}</span>
                     <span className='mb-4'>
                       <span className='text-sm mr-2'>{item.role}</span>
@@ -266,31 +271,42 @@ function App() {
           </section>
 
           <section id='contato' 
-          className='flex flex-col text-center p-5 justify-center items-center'>
-            <h1 className='mb-10'>Entre em contato</h1>
-            <div className='flex flex-col md:flex-row gap-10'>
-              <div className='boxContacts dark:bg-slate-800'>
-                <a className="link flex flex-col items-center text-center " href='mailto:renanalmeidadebarros@gmail.com'>
-                  <span>E-mail</span>
-                  <AiOutlineMail size={40} />
-                  renanalmeidadebarros@gmail.com
+          className='sectionContacts'>
+            <h1 className='mb-8 md:mb-10'>Entre em contato</h1>
+            <div className='md:flex md:justify-around'>
+              <ContactForm />            
+              <div className='flex flex-col items-center justify-around md:items-start py-5 gap-5'>
+                <div className="iconsContact">
+                  <GoLocation size={30}/> Rio de Janeiro - RJ
+                </div>
+                
+                <a href="https://web.whatsapp.com/send?phone=+5521997640679" className="iconsContact">
+                  <AiOutlineWhatsApp size={30}/>
+                  +55 (21) 99764-0679
                 </a>
-              </div>
+                
+                <div className="iconsContact">
+                  <AiOutlineMail size={30}/> renanalmeidadebarros@gmail.com
+                </div>
 
-              <div className='boxContacts dark:bg-slate-800'>
-                <a 
-                  className="link flex flex-col items-center text-center " 
-                  href="https://web.whatsapp.com/send?phone=+5521997640679"
-                >
-                  <span>WhatsApp</span>
-                  <AiOutlineWhatsApp className='hover:text-green-600 cursor-pointer' size={40}/>
-                  +552199764-0679
+                <a href="https://github.com/orenanbarros" target='_blank' className='iconsContact'>
+                  <AiFillGithub size={30}/> 
+                  github.com/orenanbarros
+                </a>
+                <a href="https://www.instagram.com/orenanbarros/" target='_blank' className="iconsContact">
+                  <FaInstagram size={25}/>
+                  instagram.com/orenanbarros/
+                </a>
+                <a href="https://twitter.com/orenanbarros" target='_blank' className="iconsContact">
+                  <BsTwitter size={25}/>
+                  twitter.com/orenanbarros
+                </a>
+                <a href="https://www.linkedin.com/in/renan-barros-31a80678/" target='_blank' className="iconsContact">
+                  <FiLinkedin size={25}/>
+                  renan-barros-31a80678
                 </a>
               </div>
             </div>
-
-          
-            
           </section>
         </div>
 
