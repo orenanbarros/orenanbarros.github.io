@@ -16,8 +16,8 @@ function Modal({text, buttonOk, close, setCloseModal}: Props) {
   return (
     <>
     
-    <div className={`modal ${close?'opacity-0 -z-10':'opacity-80 z-10'}  flex flex-col gap-5 absolute p-2 items-center justify-center `}></div>
-    <div className={`${close?'opacity-0 -z-10':'opacity-80 z-10'} p-5 bg-green-200 flex flex-col items-center gap-5 absolute`}>
+    <div className={`modal ${close?'opacity-80 z-10':'opacity-0 -z-10'}  flex flex-col gap-5 absolute p-2 items-center justify-center `}></div>
+    <div className={`${close?'opacity-80 z-10':'opacity-0 -z-10'} p-5 bg-green-200 flex flex-col items-center gap-5 absolute`}>
       {text}
       {buttonOk && (
           <button onClick={handleClick}>OK</button>
