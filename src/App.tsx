@@ -280,7 +280,7 @@ function App() {
                   <GoLocation size={30}/> Rio de Janeiro - RJ
                 </div>
                 
-                <a href="https://web.whatsapp.com/send?phone=+5521997640679" className="iconsContact">
+                <a href=" https://wa.me/5521997640679" className="iconsContact">
                   <AiOutlineWhatsApp size={30}/>
                   +55 (21) 99764-0679
                 </a>
