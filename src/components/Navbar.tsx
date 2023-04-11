@@ -4,7 +4,7 @@ import { AiFillCloseSquare } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 
-import logo from '../assets/logo.png'
+import logo from '../assets/logoPortifolio.png'
 
 
 import { HashLink as Link } from 'react-router-hash-link';
