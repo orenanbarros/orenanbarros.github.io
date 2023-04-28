@@ -1,8 +1,13 @@
 @tailwind base;
-
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
-    section { @apply md:max-w-3xl w-full px-5 mb-10}  
+  section { @apply md:max-w-3xl w-full px-5 mb-10}  
+}
+
+@layer components {
+
     .navClass{
       @apply  
           flex 
@@ -184,7 +189,6 @@
     }
 
     .emailContact{
-      writing-mode:vertical-lr;
       @apply
       hidden
       md:flex
@@ -233,6 +237,7 @@
  
       
     }
+
     .gotoTopButton{
       @apply
       fixed
@@ -276,7 +281,7 @@
         delay-150 
     }
 
-    .boxProjects{
+    a.boxProjects{
       @apply
       shadow-md 
       p-5 
@@ -285,6 +290,19 @@
       hover:-translate-y-1 
       hover:scale-110 
       duration-300 
+      flex
+      flex-col
+      justify-between
+    }
+
+    .boxProjects img{
+      @apply grayscale
+    }
+
+    .filterDropShadow{
+      @apply
+      drop-shadow-[5px_16px_10px_rgba(0,0,0,0.25)]
+      grayscale-0
     }
 
     .sectionContacts{
@@ -300,6 +318,7 @@
       text-center
       md:py-10
     }
+
     .iconsContact{
       @apply
       flex flex-col items-center gap-1 mb-3
@@ -382,6 +401,3 @@
 }
 
 
-
-@tailwind components;
-@tailwind utilities
